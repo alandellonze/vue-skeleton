@@ -7,8 +7,8 @@
     <ul>
       <li><router-link to="/">Dashboard</router-link></li>
       <li><router-link to="/cats">Cats</router-link></li>
-      <li><router-link to="/login">Login</router-link></li>
-      <li><a v-on:click.prevent="logout">Logout</a></li>
+      <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
+      <li v-if="isLoggedIn"><a v-on:click.prevent="logout">Logout</a></li>
     </ul>
   </div>
 </div>
@@ -27,6 +27,12 @@ export default {
       store.dispatch('logout').then(() => {
         router.push('/login')
       })
+    }
+  },
+
+  computed: {
+    isLoggedIn () {
+      return store.getters.isLoggedIn
     }
   }
 }

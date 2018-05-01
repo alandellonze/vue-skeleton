@@ -2,8 +2,8 @@
 <div>
   <div class="header-container">
     <div class="header-data">
-      <div class="header-profile-name"><span>{{username}}</span></div>
-      <div class="header-profile-picture" v-if="username"><img src="@/assets/images/logo.png" /></div>
+      <div class="header-profile-name" v-if="isLoggedIn"><span>{{username}}</span></div>
+      <div class="header-profile-picture" v-if="isLoggedIn"><img src="@/assets/images/logo.png" /></div>
     </div>
   </div>
 </div>
@@ -15,6 +15,10 @@ import store from '@/store/store'
 
 export default {
   computed: {
+    isLoggedIn () {
+      return store.getters.isLoggedIn
+    },
+
     username () {
       return store.getters.getProfile.username
     }
