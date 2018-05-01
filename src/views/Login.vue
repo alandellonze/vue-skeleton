@@ -34,10 +34,10 @@ export default {
     },
 
     loginCheck(response) {
-      let status = response.data.status
+      let status = response.status
       console.log('status: ' + status)
-      if (status === 'ok') {
-        let token = response.data.data
+      if (status === 200) {
+        let token = response.data.token
         console.log('token: ' + token)
         let profile = {
           username: this.email
