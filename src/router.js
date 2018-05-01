@@ -12,7 +12,7 @@ const router = new Router({
   routes: [
     { path: '/login', component: Login },
     { path: '/', component: Dashboard, meta: { secure: false } },
-    { path: '/cats', component: Cats, meta: { secure: false } },
+    { path: '/cats', component: Cats, meta: { secure: true } },
     { path: '*', redirect: '/login' }
   ]
 })
