@@ -20,8 +20,6 @@ import store from '@/store/store'
 import router from '@/router'
 
 export default {
-  name: 'panel-left',
-
   methods: {
     logout() {
       console.log('Logging out')

@@ -14,8 +14,6 @@
 import store from '@/store/store'
 
 export default {
-  name: 'panel-header',
-
   computed: {
     username () {
       return store.getters.getProfile.username

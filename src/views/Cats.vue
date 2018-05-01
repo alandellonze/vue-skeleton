@@ -6,7 +6,9 @@
     </div>
 
     <div class="cats-content">
-      <div v-for="cat in cats">{{cat.name}}</div>
+      <div v-for="cat in cats">
+        <cat-card :cat="cat" />
+      </div>
     </div>
   </div>
 </div>
@@ -15,9 +17,11 @@
 
 <script>
 import service from '@/api/service'
+import CatCard from '@/components/CatCard'
 
 export default {
   components: {
+    CatCard
   },
 
   data () {
