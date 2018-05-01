@@ -49,7 +49,7 @@ export default {
     },
 
     loginSuccess(token, profile) {
-      console.log('Access granted... leaving login page with token: ' + token)
+      console.log('access granted: ', token, profile)
 
       store.dispatch('login', {
         token: token,
@@ -60,7 +60,7 @@ export default {
     },
 
     loginFailure(error) {
-      console.log('Cannot execute login: ', error)
+      console.err('cannot execute login: ', error)
       store.dispatch('logout')
     }
   }

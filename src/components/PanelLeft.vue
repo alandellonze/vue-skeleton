@@ -6,7 +6,7 @@
     <h3>Menu</h3>
     <ul>
       <li><router-link to="/">Dashboard</router-link></li>
-      <li><router-link to="/page2">Page 2</router-link></li>
+      <li><router-link to="/cats">Cats</router-link></li>
       <li><router-link to="/login">Login</router-link></li>
       <li><a v-on:click.prevent="logout">Logout</a></li>
     </ul>
@@ -42,7 +42,7 @@ export default {
 }
 
 .left-container h3 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .left-container li {

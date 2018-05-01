@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .header-container {
   height: 50px;
-  margin: 20px 20px 0px 20px;
+  margin: 10px;
 }
 
 .header-data {

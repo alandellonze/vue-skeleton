@@ -32,36 +32,39 @@ export default {
 <style>
 body {
   margin: 0px;
+  overflow: hidden;
 }
 
 #app {
-  color: #333333;
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  flex-direction: row;
   height: 100vh;
+  color: #333333;
 }
 
 .app-left {
   width: 250px;
-  display: flex;
-  flex-direction: column;
 }
 
 .app-container {
-  width: calc(100% - 250px);
-  background-color: #F2F2F2;
   display: flex;
   flex-direction: column;
+  width: calc(100% - 250px);
+  height: 100vh;
+  background-color: #F2F2F2;
 }
 
 .app-header {
   width: 100%;
+  height: 70px;
 }
 
 .app-center {
   width: 100%;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
 }
 </style>

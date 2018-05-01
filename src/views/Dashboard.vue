@@ -14,31 +14,6 @@
 
 
 <script>
-import service from '@/api/service'
-
-export default {
-  components: {
-  },
-
-  data () {
-    return {
-    }
-  },
-
-  methods: {
-    getUpcomingOrders() {
-      service.upcomingOrders().then(response => {
-          // do something
-      }, error => {
-          // do something
-      });
-    }
-  },
-
-  mounted(){
-    this.getUpcomingOrders()
-  }
-}
 </script>
 
 
@@ -71,7 +46,7 @@ export default {
 }
 
 .dashboard-content {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 200px);
   overflow-y: auto;
   padding: 20px;
 }

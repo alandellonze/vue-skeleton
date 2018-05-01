@@ -1,12 +1,12 @@
 <template>
 <div>
-  <div class="page2-container">
-    <div class="page2-header">
-      <div class="page2-title"><span>Page 2</span></div>
+  <div class="cats-container">
+    <div class="cats-header">
+      <div class="cats-title"><span>Cats</span></div>
     </div>
 
-    <div class="page2-content">
-      Content...
+    <div class="cats-content">
+      <div v-for="cat in cats">{{cat.name}}</div>
     </div>
   </div>
 </div>
@@ -22,35 +22,36 @@ export default {
 
   data () {
     return {
+      cats: []
     }
   },
 
   methods: {
-    getUpcomingOrders() {
-      service.upcomingOrders().then(response => {
-          // do something
+    getCats() {
+      service.getCats().then(response => {
+        this.cats = response.data
       }, error => {
-          // do something
-      });
+        console.err(error)
+      })
     }
   },
 
   mounted(){
-    this.getUpcomingOrders()
+    this.getCats()
   }
 }
 </script>
 
 
 <style scoped>
-.page2-container {
+.cats-container {
   margin: 20px;
   background-color: white;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
 
-.page2-header {
+.cats-header {
   width: 100%;
   height: 50px;
   background: #333333;
@@ -61,17 +62,17 @@ export default {
   display: flex;
 }
 
-.page2-title {
+.cats-title {
   display: flex;
   margin-left: 20px;
 }
 
-.page2-title span {
+.cats-title span {
   margin: auto;
 }
 
-.page2-content {
-  height: calc(100vh - 160px);
+.cats-content {
+  height: calc(100vh - 200px);
   overflow-y: auto;
   padding: 20px;
 }
