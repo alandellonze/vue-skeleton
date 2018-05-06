@@ -42,6 +42,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   height: 100vh;
+  background-color: #F2F2F2;
   color: #333333;
 }
 
@@ -54,7 +55,6 @@ body {
   flex-direction: column;
   width: calc(100% - 250px);
   height: 100vh;
-  background-color: #F2F2F2;
 }
 
 .app-header {

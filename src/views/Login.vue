@@ -1,17 +1,19 @@
 <template>
 <div>
-  <form class="login-container">
-    <input type="text" class="login-input" placeholder="Email" v-model="email" />
-    <input type="password" class="login-input" placeholder="Password" v-model="password" />
-    <button type="submit" class="login-button" v-on:click.prevent="login">Login</button>
-  </form>
+  <div class="login-container">
+    <form class="login-form">
+      <input type="text" class="login-input" placeholder="Email" v-model="email" />
+      <input type="password" class="login-input" placeholder="Password" v-model="password" />
+      <button type="submit" class="login-button" v-on:click.prevent="login">Login</button>
+    </form>
+  </div>
 </div>
 </template>
 
 
 <script>
-import store from '@/store/store'
 import router from '@/router'
+import store from '@/store/store'
 import service from '@/api/service'
 
 export default {
@@ -70,13 +72,27 @@ export default {
 
 <style scoped>
 .login-container {
-  margin: 20px;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+  background-color: #F2F2F2;
+  color: #333333;
+}
+
+.login-form {
+  position: relative;
+  margin: auto;
   padding: 40px;
+  background-color: white;
   text-align: center;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  height: 25%;
 }
 
 .login-input {
